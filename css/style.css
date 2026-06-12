@@ -166,6 +166,13 @@ img { max-width: 100%; display: block; }
   font-size: 1rem;
   color: var(--white);
 }
+.logo-img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+.footer-logo .logo-img { height: 40px; }
 .nav-links {
   display: flex;
   align-items: center;
