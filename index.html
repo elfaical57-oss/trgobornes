@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrGoBornes – Bornes de recharge pour véhicules électriques au Maroc</title>
+  <meta name="description" content="TrGoBornes, votre partenaire en bornes de recharge pour véhicules électriques au Maroc. Solutions pour particuliers, entreprises et stations-service." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header">
+    <nav class="nav container">
+      <a href="#" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+        TrGo<span>Bornes</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#produits">Produits</a></li>
+        <li><a href="#carte">Carte</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-primary nav-cta">Demander un devis</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-particles" id="particles"></div>
+    <div class="container hero-content">
+      <span class="badge">⚡ Mobilité électrique au Maroc</span>
+      <h1>Rechargez l'avenir avec <span>TrGoBornes</span></h1>
+      <p>Votre partenaire de confiance pour l'installation et la distribution de bornes de recharge électrique — pour particuliers, entreprises et stations-service.</p>
+      <div class="hero-btns">
+        <a href="#produits" class="btn btn-primary btn-lg">Découvrir nos bornes</a>
+        <a href="#carte" class="btn btn-outline btn-lg">Voir la carte</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="counter" data-target="500">0</span>+<p>Bornes installées</p></div>
+        <div class="stat"><span class="counter" data-target="12">0</span><p>Villes couvertes</p></div>
+        <div class="stat"><span class="counter" data-target="98">0</span>%<p>Clients satisfaits</p></div>
+      </div>
+    </div>
+    <div class="hero-scroll"><a href="#services"><i class="fa-solid fa-chevron-down"></i></a></div>
+  </section>
+
+  <!-- ===== SEGMENTS ===== -->
+  <section class="segments section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Nos Solutions</span>
+        <h2>Une borne pour chaque besoin</h2>
+        <p>Des solutions adaptées à chaque profil, du particulier à la grande entreprise.</p>
+      </div>
+      <div class="segments-grid">
+        <div class="segment-card" data-delay="0">
+          <div class="segment-icon"><i class="fa-solid fa-house"></i></div>
+          <h3>Particuliers</h3>
+          <p>Rechargez votre véhicule confortablement à domicile avec nos bornes résidentielles intelligentes, compactes et connectées.</p>
+          <ul class="segment-features">
+            <li><i class="fa-solid fa-check"></i> Installation rapide</li>
+            <li><i class="fa-solid fa-check"></i> Contrôle via smartphone</li>
+            <li><i class="fa-solid fa-check"></i> Compatible tous VE</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline-green">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="segment-card featured" data-delay="100">
+          <div class="badge-featured">Populaire</div>
+          <div class="segment-icon"><i class="fa-solid fa-building"></i></div>
+          <h3>Entreprises</h3>
+          <p>Équipez vos parkings et offrez un avantage concurrentiel à vos collaborateurs et clients avec nos solutions B2B.</p>
+          <ul class="segment-features">
+            <li><i class="fa-solid fa-check"></i> Gestion centralisée</li>
+            <li><i class="fa-solid fa-check"></i> Facturation automatique</li>
+            <li><i class="fa-solid fa-check"></i> Rapport d'utilisation</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="segment-card" data-delay="200">
+          <div class="segment-icon"><i class="fa-solid fa-gas-pump"></i></div>
+          <h3>Stations-service</h3>
+          <p>Modernisez votre station avec des bornes de recharge rapide DC et attirez une nouvelle clientèle de conducteurs électriques.</p>
+          <ul class="segment-features">
+            <li><i class="fa-solid fa-check"></i> Recharge rapide DC</li>
+            <li><i class="fa-solid fa-check"></i> Paiement carte/sans contact</li>
+            <li><i class="fa-solid fa-check"></i> Maintenance incluse</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline-green">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY US ===== -->
+  <section class="why-us section">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-visual">
+          <div class="why-image-wrap">
+            <div class="why-image-inner">
+              <i class="fa-solid fa-charging-station why-big-icon"></i>
+              <div class="why-circle c1"></div>
+              <div class="why-circle c2"></div>
+              <div class="why-circle c3"></div>
+            </div>
+          </div>
+        </div>
+        <div class="why-content">
+          <span class="tag">Pourquoi TrGoBornes ?</span>
+          <h2>L'expertise au service de votre mobilité électrique</h2>
+          <p>Nous accompagnons nos clients de A à Z — du choix de la borne jusqu'à la mise en service et la maintenance.</p>
+          <div class="why-points">
+            <div class="why-point">
+              <div class="why-point-icon"><i class="fa-solid fa-certificate"></i></div>
+              <div>
+                <h4>Produits certifiés</h4>
+                <p>Toutes nos bornes sont conformes aux normes européennes et internationales.</p>
+              </div>
+            </div>
+            <div class="why-point">
+              <div class="why-point-icon"><i class="fa-solid fa-headset"></i></div>
+              <div>
+                <h4>Support 24/7</h4>
+                <p>Notre équipe technique est disponible à tout moment pour vous assister.</p>
+              </div>
+            </div>
+            <div class="why-point">
+              <div class="why-point-icon"><i class="fa-solid fa-wrench"></i></div>
+              <div>
+                <h4>Installation clé en main</h4>
+                <p>De l'étude technique à la mise en service, nous gérons tout.</p>
+              </div>
+            </div>
+            <div class="why-point">
+              <div class="why-point-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <div>
+                <h4>Garantie étendue</h4>
+                <p>Bénéficiez d'une garantie de 2 à 5 ans selon les modèles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUITS ===== -->
+  <section class="products section" id="produits">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Nos Bornes</span>
+        <h2>Catalogue de produits</h2>
+        <p>Des bornes performantes pour tous les usages, de la recharge lente résidentielle à la charge rapide DC.</p>
+      </div>
+      <div class="products-filter">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="ac">AC – Lente</button>
+        <button class="filter-btn" data-filter="dc">DC – Rapide</button>
+        <button class="filter-btn" data-filter="portable">Portable</button>
+      </div>
+      <div class="products-grid">
+        <div class="product-card" data-cat="ac">
+          <div class="product-badge ac">AC</div>
+          <div class="product-img"><i class="fa-solid fa-plug-circle-bolt"></i></div>
+          <div class="product-info">
+            <h3>WallBox 7.4 kW</h3>
+            <p>Borne murale résidentielle AC, idéale pour la recharge nocturne à domicile.</p>
+            <div class="product-specs">
+              <span><i class="fa-solid fa-bolt"></i> 7.4 kW</span>
+              <span><i class="fa-solid fa-plug"></i> Type 2</span>
+              <span><i class="fa-solid fa-wifi"></i> WiFi</span>
+            </div>
+            <a href="#contact" class="btn btn-primary">Demander un devis</a>
+          </div>
+        </div>
+        <div class="product-card" data-cat="ac">
+          <div class="product-badge ac">AC</div>
+          <div class="product-img"><i class="fa-solid fa-plug-circle-bolt"></i></div>
+          <div class="product-info">
+            <h3>Station AC 22 kW</h3>
+            <p>Borne double prise pour parkings d'entreprise ou copropriétés.</p>
+            <div class="product-specs">
+              <span><i class="fa-solid fa-bolt"></i> 22 kW</span>
+              <span><i class="fa-solid fa-plug"></i> Type 2</span>
+              <span><i class="fa-solid fa-mobile"></i> App</span>
+            </div>
+            <a href="#contact" class="btn btn-primary">Demander un devis</a>
+          </div>
+        </div>
+        <div class="product-card" data-cat="dc">
+          <div class="product-badge dc">DC</div>
+          <div class="product-img"><i class="fa-solid fa-charging-station"></i></div>
+          <div class="product-info">
+            <h3>DC Rapide 50 kW</h3>
+            <p>Chargeur rapide DC pour stations-service et axes routiers.</p>
+            <div class="product-specs">
+              <span><i class="fa-solid fa-bolt"></i> 50 kW</span>
+              <span><i class="fa-solid fa-plug"></i> CCS / CHAdeMO</span>
+              <span><i class="fa-solid fa-credit-card"></i> Paiement CB</span>
+            </div>
+            <a href="#contact" class="btn btn-primary">Demander un devis</a>
+          </div>
+        </div>
+        <div class="product-card" data-cat="dc">
+          <div class="product-badge dc">DC</div>
+          <div class="product-img"><i class="fa-solid fa-charging-station"></i></div>
+          <div class="product-info">
+            <h3>DC Ultra 120 kW</h3>
+            <p>Chargeur ultra-rapide pour grandes stations et autoroutes.</p>
+            <div class="product-specs">
+              <span><i class="fa-solid fa-bolt"></i> 120 kW</span>
+              <span><i class="fa-solid fa-plug"></i> CCS2 / CHAdeMO</span>
+              <span><i class="fa-solid fa-display"></i> Écran tactile</span>
+            </div>
+            <a href="#contact" class="btn btn-primary">Demander un devis</a>
+          </div>
+        </div>
+        <div class="product-card" data-cat="portable">
+          <div class="product-badge portable">Portable</div>
+          <div class="product-img"><i class="fa-solid fa-battery-full"></i></div>
+          <div class="product-info">
+            <h3>Câble Mobile 3.6 kW</h3>
+            <p>Câble de recharge portable avec prise standard Schuko, parfait pour voyager.</p>
+            <div class="product-specs">
+              <span><i class="fa-solid fa-bolt"></i> 3.6 kW</span>
+              <span><i class="fa-solid fa-plug"></i> Type 2</span>
+              <span><i class="fa-solid fa-suitcase"></i> Compact</span>
+            </div>
+            <a href="#contact" class="btn btn-primary">Demander un devis</a>
+          </div>
+        </div>
+        <div class="product-card" data-cat="ac">
+          <div class="product-badge ac">AC</div>
+          <div class="product-img"><i class="fa-solid fa-plug-circle-bolt"></i></div>
+          <div class="product-info">
+            <h3>Smart Wallbox 11 kW</h3>
+            <p>Borne intelligente avec gestion de charge dynamique et solaire.</p>
+            <div class="product-specs">
+              <span><i class="fa-solid fa-bolt"></i> 11 kW</span>
+              <span><i class="fa-solid fa-sun"></i> Solaire</span>
+              <span><i class="fa-solid fa-wifi"></i> 4G / WiFi</span>
+            </div>
+            <a href="#contact" class="btn btn-primary">Demander un devis</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CARTE ===== -->
+  <section class="map-section section" id="carte">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Réseau</span>
+        <h2>Carte des bornes au Maroc</h2>
+        <p>Retrouvez toutes nos bornes de recharge installées à travers le Maroc.</p>
+      </div>
+    </div>
+    <div class="map-container">
+      <div class="map-legend">
+        <h4><i class="fa-solid fa-location-dot"></i> Légende</h4>
+        <div class="legend-item"><span class="dot green"></span> Borne disponible</div>
+        <div class="legend-item"><span class="dot orange"></span> En cours d'utilisation</div>
+        <div class="legend-item"><span class="dot red"></span> Hors service</div>
+        <div class="legend-item"><span class="dot blue"></span> À venir</div>
+      </div>
+      <div id="map"></div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section class="process section">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Comment ça marche ?</span>
+        <h2>Installation en 4 étapes simples</h2>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <div class="step-icon"><i class="fa-solid fa-phone"></i></div>
+          <h3>Prise de contact</h3>
+          <p>Contactez-nous et décrivez vos besoins. Nous vous conseillons la borne la plus adaptée.</p>
+        </div>
+        <div class="process-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <div class="step-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+          <h3>Étude technique</h3>
+          <p>Nos techniciens réalisent une étude de faisabilité et vous proposent un devis détaillé.</p>
+        </div>
+        <div class="process-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <div class="step-icon"><i class="fa-solid fa-hammer"></i></div>
+          <h3>Installation</h3>
+          <p>Nos électriciens certifiés installent votre borne en toute sécurité en 1 journée.</p>
+        </div>
+        <div class="process-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <div class="step-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <h3>Mise en service</h3>
+          <p>Votre borne est activée, configurée et prête à l'emploi. Rechargez dès aujourd'hui !</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEMOIGNAGES ===== -->
+  <section class="testimonials section">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Témoignages</span>
+        <h2>Ils nous font confiance</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Installation rapide et professionnelle. La borne WallBox 7.4kW fonctionne parfaitement depuis 6 mois. Je recommande vivement TrGoBornes !"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">K</div>
+            <div>
+              <strong>Karim B.</strong>
+              <span>Particulier – Casablanca</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Nous avons équipé notre parking d'entreprise avec 10 bornes AC 22kW. La gestion centralisée via l'application est très intuitive."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">S</div>
+            <div>
+              <strong>Sarah M.</strong>
+              <span>Directrice RH – Rabat</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Notre station-service a vu son chiffre d'affaires augmenter de 30% depuis l'installation des bornes DC rapides. Excellent investissement."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">Y</div>
+            <div>
+              <strong>Youssef A.</strong>
+              <span>Gérant de station – Marrakech</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOG ===== -->
+  <section class="blog section" id="blog">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Actualités</span>
+        <h2>Le blog TrGoBornes</h2>
+        <p>Restez informé sur la mobilité électrique au Maroc et les dernières innovations.</p>
+      </div>
+      <div class="blog-grid">
+        <article class="blog-card featured-article">
+          <div class="blog-img"><i class="fa-solid fa-road"></i></div>
+          <div class="blog-content">
+            <span class="blog-cat">Actualité</span>
+            <h3>Le Maroc déploie 1000 bornes de recharge sur ses autoroutes d'ici 2026</h3>
+            <p>Le gouvernement marocain accélère le déploiement d'infrastructures de recharge dans le cadre du projet Green Miles...</p>
+            <div class="blog-meta">
+              <span><i class="fa-regular fa-calendar"></i> 10 Juin 2026</span>
+              <a href="#" class="read-more">Lire la suite <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-img small"><i class="fa-solid fa-solar-panel"></i></div>
+          <div class="blog-content">
+            <span class="blog-cat">Technologie</span>
+            <h3>Recharge solaire : combiner panneaux photovoltaïques et borne EV</h3>
+            <div class="blog-meta">
+              <span><i class="fa-regular fa-calendar"></i> 5 Juin 2026</span>
+              <a href="#" class="read-more">Lire <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-img small"><i class="fa-solid fa-car-battery"></i></div>
+          <div class="blog-content">
+            <span class="blog-cat">Conseils</span>
+            <h3>Comment bien choisir sa borne de recharge en 2026 ?</h3>
+            <div class="blog-meta">
+              <span><i class="fa-regular fa-calendar"></i> 1 Juin 2026</span>
+              <a href="#" class="read-more">Lire <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Contact</span>
+        <h2>Parlons de votre projet</h2>
+        <p>Obtenez un devis gratuit sous 24h. Notre équipe est à votre écoute.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <h4>Adresse</h4>
+              <p>Casablanca, Maroc</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <h4>Téléphone</h4>
+              <p>+212 6 00 00 00 00</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <h4>Email</h4>
+              <p>contact@trgobornes.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <h4>Horaires</h4>
+              <p>Lun – Ven : 8h à 18h<br/>Sam : 9h à 13h</p>
+            </div>
+          </div>
+          <div class="contact-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nom complet *</label>
+              <input type="text" id="name" name="name" placeholder="Votre nom" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+212 6 XX XX XX XX" />
+            </div>
+            <div class="form-group">
+              <label for="type">Type de client *</label>
+              <select id="type" name="type" required>
+                <option value="">Choisir...</option>
+                <option value="particulier">Particulier</option>
+                <option value="entreprise">Entreprise</option>
+                <option value="station">Station-service</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet de recharge..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-full">
+            <i class="fa-solid fa-paper-plane"></i> Envoyer ma demande
+          </button>
+          <div class="form-success" id="formSuccess">
+            <i class="fa-solid fa-circle-check"></i> Votre message a été envoyé ! Nous vous répondrons sous 24h.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo footer-logo">
+            <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+            TrGo<span>Bornes</span>
+          </a>
+          <p>Votre partenaire de confiance pour la mobilité électrique au Maroc. Distribution, installation et maintenance de bornes de recharge.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="#services">Particuliers</a></li>
+            <li><a href="#services">Entreprises</a></li>
+            <li><a href="#services">Stations-service</a></li>
+            <li><a href="#produits">Nos produits</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Informations</h4>
+          <ul>
+            <li><a href="#carte">Carte des bornes</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Mentions légales</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Restez informé des dernières actualités sur la mobilité électrique.</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="votre@email.com" required />
+            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 TrGoBornes – Tous droits réservés</p>
+        <p>Fait avec <i class="fa-solid fa-heart" style="color:#2ECC71"></i> au Maroc</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/212600000000" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
