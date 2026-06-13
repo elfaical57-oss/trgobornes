@@ -456,6 +456,102 @@ img { max-width: 100%; display: block; }
 .segment-features li i { color: var(--orange); }
 .segment-card.featured .segment-features li i { color: rgba(255,255,255,0.9); }
 
+/* ===== BRANDS ===== */
+.brands { background: var(--white); padding: 80px 0; }
+.brands .section-header h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); }
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+.brand-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #333;
+  letter-spacing: 0.02em;
+  cursor: default;
+  transition: var(--transition);
+  background: var(--white);
+  padding: 10px;
+}
+.brand-item:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(249,115,22,0.12);
+}
+
+/* Brand typography styles */
+.brand-jeep   { font-family: 'Arial Black', sans-serif; letter-spacing: 0.12em; font-size: 1.05rem; }
+.brand-bmw    { font-family: 'Arial', sans-serif; letter-spacing: 0.06em; color: #1c69d4; }
+.brand-chevy  { font-size: 0.85rem; letter-spacing: 0.04em; color: #c8a045; }
+.brand-vw     { font-family: 'Arial', sans-serif; font-size: 1.1rem; color: #00438a; }
+.brand-volvo  { letter-spacing: 0.14em; font-size: 0.88rem; color: #003057; }
+.brand-porsche{ letter-spacing: 0.08em; font-size: 0.75rem; color: #c00; }
+.brand-mb     { font-size: 0.88rem; color: #222; }
+.brand-ford   { font-family: Georgia, serif; font-style: italic; font-size: 1.1rem; color: #003478; }
+.brand-audi   { letter-spacing: 0.1em; color: #bb0a14; }
+.brand-hyundai{ font-size: 0.82rem; letter-spacing: 0.04em; color: #002c5f; }
+.brand-citroen{ font-size: 0.85rem; color: #9b1a2f; }
+.brand-toyota { color: #eb0a1e; font-size: 0.88rem; }
+.brand-lr     { font-size: 0.72rem; letter-spacing: 0.1em; color: #005a2b; }
+.brand-honda  { letter-spacing: 0.08em; color: #cc0000; }
+.brand-cupra  { letter-spacing: 0.14em; color: #c4952a; font-size: 0.85rem; }
+.brand-fiat   { letter-spacing: 0.14em; color: #8b0000; }
+.brand-byd    { letter-spacing: 0.1em; color: #1d5fa6; }
+.brand-mg     { letter-spacing: 0.1em; color: #c00; font-size: 1.1rem; }
+.brand-nissan { letter-spacing: 0.08em; font-size: 0.8rem; color: #c3002f; }
+.brand-peugeot{ letter-spacing: 0.06em; font-size: 0.78rem; color: #333; }
+.brand-mini   { letter-spacing: 0.1em; color: #1e1e1e; }
+.brand-renault{ font-size: 0.88rem; color: #efb914; }
+.brand-jaguar { letter-spacing: 0.1em; font-size: 0.75rem; color: #2d6a4f; }
+
+/* ===== CERTIFICATIONS ===== */
+.certs { background: var(--gray-light); }
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.cert-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 32px 26px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  text-align: center;
+  border-bottom: 3px solid transparent;
+}
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-bottom-color: var(--orange);
+}
+.cert-icon {
+  width: 64px; height: 64px;
+  background: var(--orange-tint);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem;
+  color: var(--orange);
+  margin: 0 auto 18px;
+}
+.cert-card h4 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 10px;
+  letter-spacing: 0.04em;
+}
+.cert-card p { font-size: 0.88rem; color: var(--gray); line-height: 1.6; }
+
 /* ===== WHY US ===== */
 .why-us { background: var(--white); overflow: hidden; }
 .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
@@ -881,6 +977,13 @@ img { max-width: 100%; display: block; }
   .stat span { font-size: 1.8rem; }
   .stat p { font-size: 0.72rem; }
 
+  /* Brands */
+  .brands-grid { grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .brand-item { height: 66px; font-size: 0.85rem; }
+
+  /* Certs */
+  .certs-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+
   /* Segments */
   .segments-grid { grid-template-columns: 1fr; gap: 18px; }
 
@@ -939,6 +1042,9 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 420px) {
+  .brands-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .brand-item { height: 56px; font-size: 0.72rem; padding: 6px; }
+  .certs-grid { grid-template-columns: 1fr; }
   .section { padding: 48px 0; }
   .hero-left-content h1 { font-size: 1.6rem; }
   .hero-stats { flex-direction: column; gap: 12px; }
