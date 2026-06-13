@@ -334,10 +334,7 @@ img { max-width: 100%; display: block; }
 .hero-image-bg {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #0F2027, #203A43, #2C5364);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: url('../images/image.png') center center / cover no-repeat;
   position: relative;
   overflow: hidden;
 }
@@ -345,25 +342,19 @@ img { max-width: 100%; display: block; }
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 60% 50%, rgba(249,115,22,0.2) 0%, transparent 65%);
+  background: linear-gradient(to right, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0.18) 100%);
 }
 .hero-image-content {
   position: relative;
   z-index: 2;
+  width: 100%;
+  height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 28px;
 }
-.hero-icon-main {
-  font-size: 11rem;
-  color: rgba(249,115,22,0.85);
-  filter: drop-shadow(0 0 60px rgba(249,115,22,0.5));
-  animation: floatIcon 4s ease-in-out infinite;
-}
-@keyframes floatIcon {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-14px); }
-}
+.hero-icon-main { display: none; }
 .hero-floating-card {
   position: absolute;
   background: rgba(255,255,255,0.95);
@@ -384,13 +375,10 @@ img { max-width: 100%; display: block; }
   top: auto;
   bottom: 20%;
   right: auto;
-  left: 12%;
+  left: 8%;
   animation-delay: 2s;
 }
-.hero-floating-card i {
-  color: var(--orange);
-  font-size: 1.3rem;
-}
+.hero-floating-card i { color: var(--orange); font-size: 1.3rem; }
 @keyframes cardFloat {
   0%,100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
@@ -962,10 +950,10 @@ img { max-width: 100%; display: block; }
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-right {
     clip-path: none;
-    height: 260px;
+    height: 280px;
     order: -1;
   }
-  .hero-icon-main { font-size: 7rem; }
+  .hero-icon-main { display: none; }
   .hero-floating-card { display: none; }
   .hero-left { padding: 40px 0; }
   .hero-left-content { padding: 0; max-width: 100%; }
