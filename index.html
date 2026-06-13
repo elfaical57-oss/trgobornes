@@ -12,6 +12,23 @@
 </head>
 <body>
 
+  <!-- ===== TOP BAR ===== -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <span><i class="fa-solid fa-location-dot"></i> 12 Rue Hassan II, Casablanca</span>
+        <span><i class="fa-solid fa-phone"></i> +212 6 00 00 00 00 | +212 5 22 00 00 00</span>
+        <span><i class="fa-solid fa-envelope"></i> contact@trgobornes.com</span>
+      </div>
+      <div class="topbar-right">
+        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
   <!-- ===== HEADER ===== -->
   <header id="header">
     <nav class="nav container">
@@ -19,11 +36,26 @@
         <img src="images/logo.png" alt="TrGoBornes" class="logo-img" />
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#produits">Produits</a></li>
-        <li><a href="#carte">Carte</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" class="active">Accueil</a></li>
+        <li class="has-dropdown">
+          <a href="#produits">Produits <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="#produits">Bornes AC – Lente</a></li>
+            <li><a href="#produits">Bornes DC – Rapide</a></li>
+            <li><a href="#produits">Bornes Portables</a></li>
+            <li><a href="#produits">Accessoires</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="#services">Solutions <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="#services">Particuliers</a></li>
+            <li><a href="#services">Entreprises</a></li>
+            <li><a href="#services">Stations-service</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Application</a></li>
+        <li><a href="#carte">Maps de bornes</a></li>
       </ul>
       <a href="#contact" class="btn btn-primary nav-cta">Demander un devis</a>
       <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -32,25 +64,58 @@
     </nav>
   </header>
 
+  <!-- ===== ANNOUNCEMENT BAR ===== -->
+  <div class="announce-bar">
+    <div class="container">
+      <i class="fa-solid fa-bolt"></i>
+      Installez votre borne de recharge avec un financement à taux 0 %
+      <a href="#contact">En savoir plus</a>
+    </div>
+  </div>
+
   <!-- ===== HERO ===== -->
   <section class="hero" id="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-particles" id="particles"></div>
-    <div class="container hero-content">
-      <span class="badge">⚡ Mobilité électrique au Maroc</span>
-      <h1>Rechargez l'avenir avec <span>TrGoBornes</span></h1>
-      <p>Votre partenaire de confiance pour l'installation et la distribution de bornes de recharge électrique — pour particuliers, entreprises et stations-service.</p>
-      <div class="hero-btns">
-        <a href="#produits" class="btn btn-primary btn-lg">Découvrir nos bornes</a>
-        <a href="#carte" class="btn btn-outline btn-lg">Voir la carte</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat"><span class="counter" data-target="500">0</span>+<p>Bornes installées</p></div>
-        <div class="stat"><span class="counter" data-target="12">0</span><p>Villes couvertes</p></div>
-        <div class="stat"><span class="counter" data-target="98">0</span>%<p>Clients satisfaits</p></div>
+    <div class="hero-left">
+      <div class="hero-left-content">
+        <h1>Connectez-vous à l'avenir de la <span>mobilité électrique</span></h1>
+        <p>Chez TrGoBornes, nous fournissons des bornes de recharge pour véhicules électriques et hybrides rechargeables, alliant technologie avancée et design élégant. Que vous soyez un particulier, une entreprise ou une institution publique, nos bornes s'adaptent à vos besoins.</p>
+        <div class="hero-btns">
+          <a href="#produits" class="btn btn-primary btn-lg">En savoir plus</a>
+          <a href="#contact" class="btn btn-outline-orange btn-lg">Demander un devis</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="counter" data-target="500">0</span>+
+            <p>Bornes installées</p>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="counter" data-target="12">0</span>
+            <p>Villes couvertes</p>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="counter" data-target="98">0</span>%
+            <p>Clients satisfaits</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="hero-scroll"><a href="#services"><i class="fa-solid fa-chevron-down"></i></a></div>
+    <div class="hero-right">
+      <div class="hero-image-bg">
+        <div class="hero-image-content">
+          <i class="fa-solid fa-charging-station hero-icon-main"></i>
+          <div class="hero-floating-card">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Recharge rapide<br/><strong>jusqu'à 120 kW</strong></span>
+          </div>
+          <div class="hero-floating-card card-2">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Certifié<br/><strong>CE & IEC 61851</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ===== SEGMENTS ===== -->
@@ -62,7 +127,7 @@
         <p>Des solutions adaptées à chaque profil, du particulier à la grande entreprise.</p>
       </div>
       <div class="segments-grid">
-        <div class="segment-card" data-delay="0">
+        <div class="segment-card">
           <div class="segment-icon"><i class="fa-solid fa-house"></i></div>
           <h3>Particuliers</h3>
           <p>Rechargez votre véhicule confortablement à domicile avec nos bornes résidentielles intelligentes, compactes et connectées.</p>
@@ -71,9 +136,9 @@
             <li><i class="fa-solid fa-check"></i> Contrôle via smartphone</li>
             <li><i class="fa-solid fa-check"></i> Compatible tous VE</li>
           </ul>
-          <a href="#contact" class="btn btn-outline-green">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#contact" class="btn btn-outline-orange">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
         </div>
-        <div class="segment-card featured" data-delay="100">
+        <div class="segment-card featured">
           <div class="badge-featured">Populaire</div>
           <div class="segment-icon"><i class="fa-solid fa-building"></i></div>
           <h3>Entreprises</h3>
@@ -83,18 +148,18 @@
             <li><i class="fa-solid fa-check"></i> Facturation automatique</li>
             <li><i class="fa-solid fa-check"></i> Rapport d'utilisation</li>
           </ul>
-          <a href="#contact" class="btn btn-primary">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#contact" class="btn btn-white">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
         </div>
-        <div class="segment-card" data-delay="200">
+        <div class="segment-card">
           <div class="segment-icon"><i class="fa-solid fa-gas-pump"></i></div>
           <h3>Stations-service</h3>
-          <p>Modernisez votre station avec des bornes de recharge rapide DC et attirez une nouvelle clientèle de conducteurs électriques.</p>
+          <p>Modernisez votre station avec des bornes de recharge rapide DC et attirez une nouvelle clientèle.</p>
           <ul class="segment-features">
             <li><i class="fa-solid fa-check"></i> Recharge rapide DC</li>
-            <li><i class="fa-solid fa-check"></i> Paiement carte/sans contact</li>
+            <li><i class="fa-solid fa-check"></i> Paiement sans contact</li>
             <li><i class="fa-solid fa-check"></i> Maintenance incluse</li>
           </ul>
-          <a href="#contact" class="btn btn-outline-green">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#contact" class="btn btn-outline-orange">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
@@ -105,13 +170,11 @@
     <div class="container">
       <div class="why-grid">
         <div class="why-visual">
-          <div class="why-image-wrap">
-            <div class="why-image-inner">
-              <i class="fa-solid fa-charging-station why-big-icon"></i>
-              <div class="why-circle c1"></div>
-              <div class="why-circle c2"></div>
-              <div class="why-circle c3"></div>
-            </div>
+          <div class="why-image-inner">
+            <i class="fa-solid fa-charging-station why-big-icon"></i>
+            <div class="why-circle c1"></div>
+            <div class="why-circle c2"></div>
+            <div class="why-circle c3"></div>
           </div>
         </div>
         <div class="why-content">
@@ -179,7 +242,7 @@
               <span><i class="fa-solid fa-plug"></i> Type 2</span>
               <span><i class="fa-solid fa-wifi"></i> WiFi</span>
             </div>
-            <a href="#contact" class="btn btn-primary">Demander un devis</a>
+            <a href="#contact" class="btn btn-primary btn-full">Demander un devis</a>
           </div>
         </div>
         <div class="product-card" data-cat="ac">
@@ -193,7 +256,7 @@
               <span><i class="fa-solid fa-plug"></i> Type 2</span>
               <span><i class="fa-solid fa-mobile"></i> App</span>
             </div>
-            <a href="#contact" class="btn btn-primary">Demander un devis</a>
+            <a href="#contact" class="btn btn-primary btn-full">Demander un devis</a>
           </div>
         </div>
         <div class="product-card" data-cat="dc">
@@ -205,9 +268,9 @@
             <div class="product-specs">
               <span><i class="fa-solid fa-bolt"></i> 50 kW</span>
               <span><i class="fa-solid fa-plug"></i> CCS / CHAdeMO</span>
-              <span><i class="fa-solid fa-credit-card"></i> Paiement CB</span>
+              <span><i class="fa-solid fa-credit-card"></i> CB</span>
             </div>
-            <a href="#contact" class="btn btn-primary">Demander un devis</a>
+            <a href="#contact" class="btn btn-primary btn-full">Demander un devis</a>
           </div>
         </div>
         <div class="product-card" data-cat="dc">
@@ -218,10 +281,10 @@
             <p>Chargeur ultra-rapide pour grandes stations et autoroutes.</p>
             <div class="product-specs">
               <span><i class="fa-solid fa-bolt"></i> 120 kW</span>
-              <span><i class="fa-solid fa-plug"></i> CCS2 / CHAdeMO</span>
-              <span><i class="fa-solid fa-display"></i> Écran tactile</span>
+              <span><i class="fa-solid fa-plug"></i> CCS2</span>
+              <span><i class="fa-solid fa-display"></i> Tactile</span>
             </div>
-            <a href="#contact" class="btn btn-primary">Demander un devis</a>
+            <a href="#contact" class="btn btn-primary btn-full">Demander un devis</a>
           </div>
         </div>
         <div class="product-card" data-cat="portable">
@@ -229,13 +292,13 @@
           <div class="product-img"><i class="fa-solid fa-battery-full"></i></div>
           <div class="product-info">
             <h3>Câble Mobile 3.6 kW</h3>
-            <p>Câble de recharge portable avec prise standard Schuko, parfait pour voyager.</p>
+            <p>Câble de recharge portable avec prise standard, parfait pour voyager.</p>
             <div class="product-specs">
               <span><i class="fa-solid fa-bolt"></i> 3.6 kW</span>
               <span><i class="fa-solid fa-plug"></i> Type 2</span>
               <span><i class="fa-solid fa-suitcase"></i> Compact</span>
             </div>
-            <a href="#contact" class="btn btn-primary">Demander un devis</a>
+            <a href="#contact" class="btn btn-primary btn-full">Demander un devis</a>
           </div>
         </div>
         <div class="product-card" data-cat="ac">
@@ -247,9 +310,9 @@
             <div class="product-specs">
               <span><i class="fa-solid fa-bolt"></i> 11 kW</span>
               <span><i class="fa-solid fa-sun"></i> Solaire</span>
-              <span><i class="fa-solid fa-wifi"></i> 4G / WiFi</span>
+              <span><i class="fa-solid fa-wifi"></i> 4G/WiFi</span>
             </div>
-            <a href="#contact" class="btn btn-primary">Demander un devis</a>
+            <a href="#contact" class="btn btn-primary btn-full">Demander un devis</a>
           </div>
         </div>
       </div>
@@ -261,15 +324,15 @@
     <div class="container">
       <div class="section-header">
         <span class="tag">Réseau</span>
-        <h2>Carte des bornes au Maroc</h2>
-        <p>Retrouvez toutes nos bornes de recharge installées à travers le Maroc.</p>
+        <h2>Maps de bornes au Maroc</h2>
+        <p>Retrouvez toutes nos bornes de recharge installées à travers le royaume.</p>
       </div>
     </div>
     <div class="map-container">
       <div class="map-legend">
         <h4><i class="fa-solid fa-location-dot"></i> Légende</h4>
-        <div class="legend-item"><span class="dot green"></span> Borne disponible</div>
-        <div class="legend-item"><span class="dot orange"></span> En cours d'utilisation</div>
+        <div class="legend-item"><span class="dot green"></span> Disponible</div>
+        <div class="legend-item"><span class="dot orange-dot"></span> En cours</div>
         <div class="legend-item"><span class="dot red"></span> Hors service</div>
         <div class="legend-item"><span class="dot blue"></span> À venir</div>
       </div>
@@ -281,8 +344,8 @@
   <section class="process section">
     <div class="container">
       <div class="section-header">
-        <span class="tag">Comment ça marche ?</span>
-        <h2>Installation en 4 étapes simples</h2>
+        <span class="tag tag-white">Comment ça marche ?</span>
+        <h2 style="color:#fff">Installation en 4 étapes simples</h2>
       </div>
       <div class="process-steps">
         <div class="process-step">
@@ -422,7 +485,7 @@
             <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
             <div>
               <h4>Adresse</h4>
-              <p>Casablanca, Maroc</p>
+              <p>12 Rue Hassan II, Casablanca, Maroc</p>
             </div>
           </div>
           <div class="contact-item">
@@ -447,10 +510,10 @@
             </div>
           </div>
           <div class="contact-social">
-            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
         <form class="contact-form" id="contactForm">
@@ -501,13 +564,13 @@
       <div class="container footer-grid">
         <div class="footer-brand">
           <a href="#" class="logo footer-logo">
-            <img src="images/logo.png" alt="TrGoBornes" class="logo-img" />
+            <img src="images/logo.png" alt="TrGoBornes" class="logo-img logo-img-footer" />
           </a>
           <p>Votre partenaire de confiance pour la mobilité électrique au Maroc. Distribution, installation et maintenance de bornes de recharge.</p>
           <div class="footer-social">
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
             <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
@@ -523,7 +586,7 @@
         <div class="footer-links">
           <h4>Informations</h4>
           <ul>
-            <li><a href="#carte">Carte des bornes</a></li>
+            <li><a href="#carte">Maps de bornes</a></li>
             <li><a href="#blog">Blog</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="#">Mentions légales</a></li>
@@ -542,7 +605,7 @@
     <div class="footer-bottom">
       <div class="container">
         <p>&copy; 2026 TrGoBornes – Tous droits réservés</p>
-        <p>Fait avec <i class="fa-solid fa-heart" style="color:#2ECC71"></i> au Maroc</p>
+        <p>Fait avec <i class="fa-solid fa-heart" style="color:#F97316"></i> au Maroc</p>
       </div>
     </div>
   </footer>
