@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Borne de recharge à domicile au Maroc – Devis gratuit | TrGoBornes</title>
+  <meta name="description" content="Installez votre borne de recharge en 48h. Devis gratuit sous 24h. Toutes marques. Casablanca, Rabat, Marrakech et partout au Maroc." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Landing overrides ── */
+    .lp-header {
+      background: var(--navy);
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: var(--shadow);
+    }
+    .lp-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .lp-header .logo-img { height: 44px; width: auto; }
+    .lp-phone {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .lp-phone i { color: var(--orange); }
+
+    /* ── Hero ── */
+    .lp-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 70px 0 60px;
+    }
+    .lp-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .lp-hero-left { color: var(--white); }
+    .lp-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(249,115,22,0.18);
+      color: var(--orange);
+      border: 1px solid rgba(249,115,22,0.4);
+      padding: 6px 16px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .lp-hero h1 {
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+    .lp-hero h1 span { color: var(--orange); }
+    .lp-hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+    .lp-benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+    .lp-benefit {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.9);
+    }
+    .lp-benefit i {
+      width: 24px;
+      height: 24px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+      color: white;
+    }
+    .lp-trust-row {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .lp-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.82rem;
+    }
+    .lp-trust-item i { color: var(--orange); }
+
+    /* ── Form card ── */
+    .lp-form-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.25);
+    }
+    .lp-form-card h2 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .lp-form-card .form-subtitle {
+      color: var(--gray);
+      font-size: 0.88rem;
+      margin-bottom: 24px;
+    }
+    .lp-form-card .form-group {
+      margin-bottom: 14px;
+    }
+    .lp-form-card label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 5px;
+    }
+    .lp-form-card input,
+    .lp-form-card select {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.92rem;
+      color: var(--text);
+      outline: none;
+      transition: var(--transition);
+    }
+    .lp-form-card input:focus,
+    .lp-form-card select:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(249,115,22,0.12);
+    }
+    .lp-form-card .btn-submit {
+      width: 100%;
+      justify-content: center;
+      padding: 15px;
+      font-size: 1.05rem;
+      margin-top: 6px;
+      border-radius: 8px;
+    }
+    .lp-form-privacy {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--gray);
+      margin-top: 10px;
+    }
+    .lp-form-privacy i { color: var(--orange); }
+    .form-success-lp {
+      display: none;
+      text-align: center;
+      padding: 24px;
+      color: #16a34a;
+      font-weight: 600;
+    }
+    .form-success-lp i { font-size: 2.5rem; margin-bottom: 10px; display: block; }
+
+    /* ── Stats bar ── */
+    .lp-stats {
+      background: var(--orange);
+      padding: 36px 0;
+    }
+    .lp-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+    .lp-stat { color: var(--white); }
+    .lp-stat-num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .lp-stat-label { font-size: 0.85rem; opacity: 0.9; margin-top: 4px; }
+
+    /* ── How it works ── */
+    .lp-steps { padding: 80px 0; background: var(--gray-light); }
+    .lp-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .lp-step {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+    .lp-step-num {
+      width: 48px;
+      height: 48px;
+      background: var(--orange);
+      color: white;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .lp-step h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .lp-step p { font-size: 0.88rem; color: var(--gray); line-height: 1.6; }
+
+    /* ── Testimonials ── */
+    .lp-testimonials { padding: 80px 0; }
+    .lp-testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .lp-testimonial {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      position: relative;
+    }
+    .lp-testimonial::before {
+      content: '"';
+      font-size: 4rem;
+      color: var(--orange-tint);
+      font-family: Georgia, serif;
+      position: absolute;
+      top: 10px;
+      left: 18px;
+      line-height: 1;
+    }
+    .lp-testimonial .stars { color: #F59E0B; margin-bottom: 12px; }
+    .lp-testimonial p { font-size: 0.9rem; color: var(--text); line-height: 1.65; margin-bottom: 18px; }
+    .lp-testimonial-author { display: flex; align-items: center; gap: 12px; }
+    .lp-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lp-author-info strong { display: block; font-size: 0.88rem; color: var(--navy); }
+    .lp-author-info span { font-size: 0.78rem; color: var(--gray); }
+
+    /* ── Brands strip ── */
+    .lp-brands { background: var(--navy); padding: 40px 0; }
+    .lp-brands-label { text-align: center; color: rgba(255,255,255,0.55); font-size: 0.85rem; margin-bottom: 20px; }
+    .lp-brands-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    .lp-brand-chip {
+      background: rgba(255,255,255,0.07);
+      color: rgba(255,255,255,0.7);
+      padding: 6px 16px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* ── Final CTA ── */
+    .lp-cta {
+      background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+      padding: 70px 0;
+      text-align: center;
+    }
+    .lp-cta h2 { color: white; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 12px; }
+    .lp-cta p { color: rgba(255,255,255,0.85); margin-bottom: 30px; font-size: 1rem; }
+    .lp-cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-white-solid {
+      background: white;
+      color: var(--orange-dark);
+      border: 2px solid white;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-white-solid:hover { background: var(--orange-tint); transform: translateY(-2px); }
+    .btn-whatsapp-cta {
+      background: #25D366;
+      color: white;
+      border: 2px solid #25D366;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-whatsapp-cta:hover { background: #1ebe5d; transform: translateY(-2px); }
+
+    /* ── Footer ── */
+    .lp-footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 24px;
+      font-size: 0.82rem;
+    }
+    .lp-footer a { color: var(--orange); }
+
+    /* ── WhatsApp float ── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+      z-index: 1000;
+      transition: var(--transition);
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .lp-hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      .lp-stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .lp-steps-grid { grid-template-columns: 1fr; }
+      .lp-testimonials-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .lp-hero { padding: 40px 0 36px; }
+      .lp-form-card { padding: 24px 18px; }
+      .lp-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .lp-stat-num { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="lp-header">
+    <div class="container lp-header-inner">
+      <a href="index.html">
+        <img src="images/logo.jpeg" alt="TrGoBornes" class="logo-img" />
+      </a>
+      <a href="tel:+212600000000" class="lp-phone">
+        <i class="fa-solid fa-phone"></i> +212 6 00 00 00 00
+      </a>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="lp-hero">
+    <div class="container lp-hero-grid">
+
+      <!-- Left: copy -->
+      <div class="lp-hero-left">
+        <div class="lp-hero-tag">
+          <i class="fa-solid fa-bolt"></i> Offre spéciale – Installation en 48h
+        </div>
+        <h1>Installez votre <span>borne de recharge</span> à domicile ou en entreprise au Maroc</h1>
+        <p class="lp-hero-sub">
+          Plus besoin de chercher une borne publique. Rechargez votre véhicule électrique directement chez vous, la nuit, pendant que vous dormez.
+        </p>
+        <div class="lp-benefits">
+          <div class="lp-benefit">
+            <i class="fa-solid fa-check"></i>
+            Installation rapide par des électriciens certifiés
+          </div>
+          <div class="lp-benefit">
+            <i class="fa-solid fa-check"></i>
+            Compatible toutes marques — Tesla, Dacia, Renault, BMW…
+          </div>
+          <div class="lp-benefit">
+            <i class="fa-solid fa-check"></i>
+            Devis gratuit et sans engagement sous 24h
+          </div>
+          <div class="lp-benefit">
+            <i class="fa-solid fa-check"></i>
+            Garantie 2 à 5 ans selon le modèle
+          </div>
+          <div class="lp-benefit">
+            <i class="fa-solid fa-check"></i>
+            Financement disponible à taux 0 %
+          </div>
+        </div>
+        <div class="lp-trust-row">
+          <div class="lp-trust-item"><i class="fa-solid fa-certificate"></i> Certifié CE</div>
+          <div class="lp-trust-item"><i class="fa-solid fa-shield-halved"></i> IEC 61851</div>
+          <div class="lp-trust-item"><i class="fa-solid fa-star"></i> 98% satisfaits</div>
+          <div class="lp-trust-item"><i class="fa-solid fa-map-marker-alt"></i> 12 villes</div>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="lp-form-card">
+        <h2>Obtenez votre devis gratuit</h2>
+        <p class="form-subtitle">Réponse garantie sous 24h — sans engagement</p>
+        <form id="lpForm">
+          <div class="form-group">
+            <label for="lp-name">Nom complet *</label>
+            <input type="text" id="lp-name" name="name" placeholder="Votre nom" required />
+          </div>
+          <div class="form-group">
+            <label for="lp-phone">Téléphone *</label>
+            <input type="tel" id="lp-phone" name="phone" placeholder="+212 6 XX XX XX XX" required />
+          </div>
+          <div class="form-group">
+            <label for="lp-email">Email</label>
+            <input type="email" id="lp-email" name="email" placeholder="votre@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="lp-city">Ville *</label>
+            <select id="lp-city" name="city" required>
+              <option value="">Sélectionner votre ville</option>
+              <option>Casablanca</option>
+              <option>Rabat</option>
+              <option>Marrakech</option>
+              <option>Fès</option>
+              <option>Tanger</option>
+              <option>Agadir</option>
+              <option>Meknès</option>
+              <option>Oujda</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="lp-type">Je suis *</label>
+            <select id="lp-type" name="type" required>
+              <option value="">Choisir...</option>
+              <option value="particulier">Particulier (domicile)</option>
+              <option value="entreprise">Entreprise / Parking</option>
+              <option value="station">Station-service</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit">
+            <i class="fa-solid fa-paper-plane"></i> Recevoir mon devis gratuit
+          </button>
+          <p class="lp-form-privacy"><i class="fa-solid fa-lock"></i> Vos données sont confidentielles. Aucun spam.</p>
+        </form>
+        <div class="form-success-lp" id="lpSuccess">
+          <i class="fa-solid fa-circle-check"></i>
+          Merci ! Votre demande a bien été reçue.<br/>
+          Nous vous contactons sous 24h.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== STATS BAR ===== -->
+  <section class="lp-stats">
+    <div class="container lp-stats-grid">
+      <div class="lp-stat">
+        <div class="lp-stat-num">500+</div>
+        <div class="lp-stat-label">Bornes installées</div>
+      </div>
+      <div class="lp-stat">
+        <div class="lp-stat-num">12</div>
+        <div class="lp-stat-label">Villes couvertes</div>
+      </div>
+      <div class="lp-stat">
+        <div class="lp-stat-num">98%</div>
+        <div class="lp-stat-label">Clients satisfaits</div>
+      </div>
+      <div class="lp-stat">
+        <div class="lp-stat-num">48h</div>
+        <div class="lp-stat-label">Délai d'installation</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="lp-steps">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Simple & Rapide</span>
+        <h2>Votre borne installée en 3 étapes</h2>
+        <p>De la demande à la mise en service, nous gérons tout pour vous.</p>
+      </div>
+      <div class="lp-steps-grid">
+        <div class="lp-step">
+          <div class="lp-step-num">1</div>
+          <h3>Remplissez le formulaire</h3>
+          <p>Indiquez vos besoins en 2 minutes. Notre équipe analyse votre demande immédiatement.</p>
+        </div>
+        <div class="lp-step">
+          <div class="lp-step-num">2</div>
+          <h3>Recevez votre devis</h3>
+          <p>Un technicien vous contacte sous 24h pour établir un devis détaillé et gratuit.</p>
+        </div>
+        <div class="lp-step">
+          <div class="lp-step-num">3</div>
+          <h3>Installation en 48h</h3>
+          <p>Nos électriciens certifiés installent votre borne. Rechargez dès le soir même !</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="lp-testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Témoignages</span>
+        <h2>Ils rechargent déjà chez eux</h2>
+      </div>
+      <div class="lp-testimonials-grid">
+        <div class="lp-testimonial">
+          <div class="stars">★★★★★</div>
+          <p>"Installation en une journée, équipe très professionnelle. La borne WallBox fonctionne parfaitement depuis 6 mois. Je recommande vivement TrGoBornes !"</p>
+          <div class="lp-testimonial-author">
+            <div class="lp-avatar">K</div>
+            <div class="lp-author-info">
+              <strong>Karim B.</strong>
+              <span>Particulier – Casablanca</span>
+            </div>
+          </div>
+        </div>
+        <div class="lp-testimonial">
+          <div class="stars">★★★★★</div>
+          <p>"Nous avons équipé notre parking d'entreprise avec 10 bornes. La gestion via l'application est très intuitive. Nos collaborateurs sont ravis."</p>
+          <div class="lp-testimonial-author">
+            <div class="lp-avatar">S</div>
+            <div class="lp-author-info">
+              <strong>Sarah M.</strong>
+              <span>Directrice RH – Rabat</span>
+            </div>
+          </div>
+        </div>
+        <div class="lp-testimonial">
+          <div class="stars">★★★★★</div>
+          <p>"Depuis l'installation des bornes DC rapides dans ma station, j'attire une clientèle VE fidèle. Excellent retour sur investissement."</p>
+          <div class="lp-testimonial-author">
+            <div class="lp-avatar">Y</div>
+            <div class="lp-author-info">
+              <strong>Youssef A.</strong>
+              <span>Gérant de station – Marrakech</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BRANDS ===== -->
+  <section class="lp-brands">
+    <div class="container">
+      <p class="lp-brands-label">Compatible avec toutes les grandes marques de véhicules électriques</p>
+      <div class="lp-brands-row">
+        <div class="lp-brand-chip">Tesla</div>
+        <div class="lp-brand-chip">Renault</div>
+        <div class="lp-brand-chip">Dacia</div>
+        <div class="lp-brand-chip">BMW</div>
+        <div class="lp-brand-chip">Mercedes</div>
+        <div class="lp-brand-chip">Volkswagen</div>
+        <div class="lp-brand-chip">Peugeot</div>
+        <div class="lp-brand-chip">Citroën</div>
+        <div class="lp-brand-chip">Hyundai</div>
+        <div class="lp-brand-chip">Audi</div>
+        <div class="lp-brand-chip">Toyota</div>
+        <div class="lp-brand-chip">BYD</div>
+        <div class="lp-brand-chip">MG</div>
+        <div class="lp-brand-chip">Nissan</div>
+        <div class="lp-brand-chip">Porsche</div>
+        <div class="lp-brand-chip">Volvo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="lp-cta">
+    <div class="container">
+      <h2>Prêt à recharger chez vous ?</h2>
+      <p>Obtenez votre devis gratuit maintenant. Notre équipe vous rappelle sous 24h.</p>
+      <div class="lp-cta-btns">
+        <a href="#lpForm" class="btn-white-solid" onclick="document.getElementById('lp-name').focus()">
+          <i class="fa-solid fa-paper-plane"></i> Demander un devis
+        </a>
+        <a href="https://wa.me/212600000000?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20borne%20de%20recharge." class="btn-whatsapp-cta" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="lp-footer">
+    <p>&copy; 2026 TrGoBornes – 12 Rue Hassan II, Casablanca &nbsp;|&nbsp; <a href="mailto:contact@trgobornes.com">contact@trgobornes.com</a> &nbsp;|&nbsp; <a href="index.html">Voir le site complet</a></p>
+  </footer>
+
+  <!-- WhatsApp float -->
+  <a href="https://wa.me/212600000000?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20borne%20de%20recharge." class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script>
+    document.getElementById('lpForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      this.style.display = 'none';
+      document.getElementById('lpSuccess').style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
