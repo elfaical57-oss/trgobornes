@@ -591,10 +591,6 @@
             <input type="tel" id="lp-phone" name="phone" placeholder="+212 6 XX XX XX XX" required />
           </div>
           <div class="form-group">
-            <label for="lp-email">Email</label>
-            <input type="email" id="lp-email" name="email" placeholder="votre@email.com" />
-          </div>
-          <div class="form-group">
             <label for="lp-city">Ville *</label>
             <select id="lp-city" name="city" required>
               <option value="">Sélectionner votre ville</option>
@@ -785,7 +781,6 @@
       e.preventDefault();
       var name  = document.getElementById('lp-name').value;
       var phone = document.getElementById('lp-phone').value;
-      var email = document.getElementById('lp-email').value;
       var city  = document.getElementById('lp-city').value;
       var type  = document.getElementById('lp-type').value;
 
@@ -793,7 +788,6 @@
         + 'Nouvelle demande de devis :%0A'
         + '👤 Nom : ' + encodeURIComponent(name) + '%0A'
         + '📞 Téléphone : ' + encodeURIComponent(phone) + '%0A'
-        + '📧 Email : ' + encodeURIComponent(email || 'Non renseigné') + '%0A'
         + '📍 Ville : ' + encodeURIComponent(city) + '%0A'
         + '🏷️ Type : ' + encodeURIComponent(type);
 
