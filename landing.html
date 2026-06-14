@@ -783,8 +783,26 @@
   <script>
     document.getElementById('lpForm').addEventListener('submit', function(e) {
       e.preventDefault();
+      var name  = document.getElementById('lp-name').value;
+      var phone = document.getElementById('lp-phone').value;
+      var email = document.getElementById('lp-email').value;
+      var city  = document.getElementById('lp-city').value;
+      var type  = document.getElementById('lp-type').value;
+
+      var msg = 'Bonjour TrGoBornes,%0A%0A'
+        + 'Nouvelle demande de devis :%0A'
+        + '👤 Nom : ' + encodeURIComponent(name) + '%0A'
+        + '📞 Téléphone : ' + encodeURIComponent(phone) + '%0A'
+        + '📧 Email : ' + encodeURIComponent(email || 'Non renseigné') + '%0A'
+        + '📍 Ville : ' + encodeURIComponent(city) + '%0A'
+        + '🏷️ Type : ' + encodeURIComponent(type);
+
       this.style.display = 'none';
       document.getElementById('lpSuccess').style.display = 'block';
+
+      setTimeout(function() {
+        window.open('https://wa.me/212678975758?text=' + msg, '_blank');
+      }, 800);
     });
 
     // Carousel
