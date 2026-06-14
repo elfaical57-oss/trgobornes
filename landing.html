@@ -510,6 +510,14 @@
             Station-service partenaire – Marrakech
           </div>
         </div>
+        <div class="carousel-slide">
+          <img src="images/car4.png" alt="Borne de recharge TrGoBornes" />
+          <div class="carousel-overlay"></div>
+          <div class="carousel-caption">
+            <strong>Installation professionnelle</strong>
+            Borne certifiée CE & IEC 61851
+          </div>
+        </div>
       </div>
       <button class="carousel-btn prev" id="carouselPrev" aria-label="Précédent">
         <i class="fa-solid fa-chevron-left"></i>
@@ -521,6 +529,7 @@
         <button class="carousel-dot active" data-index="0" aria-label="Photo 1"></button>
         <button class="carousel-dot" data-index="1" aria-label="Photo 2"></button>
         <button class="carousel-dot" data-index="2" aria-label="Photo 3"></button>
+        <button class="carousel-dot" data-index="3" aria-label="Photo 4"></button>
       </div>
     </div>
   </section>
@@ -782,7 +791,7 @@
     (function() {
       const track = document.getElementById('carouselTrack');
       const dots = document.querySelectorAll('.carousel-dot');
-      const total = 3;
+      const total = 4;
       let current = 0;
       let timer;
 
