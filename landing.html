@@ -180,6 +180,103 @@
     }
     .form-success-lp i { font-size: 2.5rem; margin-bottom: 10px; display: block; }
 
+    /* ── Carousel ── */
+    .lp-carousel-section {
+      background: var(--navy-light);
+      padding: 60px 0;
+    }
+    .lp-carousel-section .section-label {
+      text-align: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .lp-carousel-section h2 {
+      text-align: center;
+      color: var(--white);
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 800;
+      margin-bottom: 32px;
+    }
+    .lp-carousel-section h2 span { color: var(--orange); }
+    .carousel-wrapper {
+      position: relative;
+      max-width: 860px;
+      margin: 0 auto;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.55s cubic-bezier(0.4,0,0.2,1);
+    }
+    .carousel-slide {
+      min-width: 100%;
+      position: relative;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      display: block;
+    }
+    .carousel-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(26,26,46,0.88));
+      color: white;
+      padding: 32px 28px 22px;
+      font-size: 0.95rem;
+    }
+    .carousel-caption strong { display: block; font-size: 1.05rem; margin-bottom: 2px; }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(249,115,22,0.85);
+      color: white;
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      z-index: 10;
+    }
+    .carousel-btn:hover { background: var(--orange-dark); transform: translateY(-50%) scale(1.08); }
+    .carousel-btn.prev { left: 14px; }
+    .carousel-btn.next { right: 14px; }
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 18px;
+    }
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      padding: 0;
+    }
+    .carousel-dot.active { background: var(--orange); width: 24px; border-radius: 4px; }
+    @media (max-width: 600px) {
+      .carousel-slide img { height: 240px; }
+    }
+
     /* ── Stats bar ── */
     .lp-stats {
       background: var(--orange);
@@ -492,6 +589,50 @@
     </div>
   </section>
 
+  <!-- ===== CAROUSEL ===== -->
+  <section class="lp-carousel-section">
+    <div class="container">
+      <p class="section-label">Nos réalisations</p>
+      <h2>Des véhicules rechargés grâce à <span>TrGoBornes</span></h2>
+      <div class="carousel-wrapper">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-slide">
+            <img src="images/car1.jpeg" alt="Véhicule électrique en recharge – TrGoBornes" />
+            <div class="carousel-caption">
+              <strong>Recharge à domicile</strong>
+              Installation résidentielle – Casablanca
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/car2.jpeg" alt="Borne de recharge installée par TrGoBornes" />
+            <div class="carousel-caption">
+              <strong>Solution entreprise</strong>
+              Parking privé équipé – Rabat
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/car3.png" alt="Station de recharge rapide TrGoBornes" />
+            <div class="carousel-caption">
+              <strong>Recharge rapide DC</strong>
+              Station-service partenaire – Marrakech
+            </div>
+          </div>
+        </div>
+        <button class="carousel-btn prev" id="carouselPrev" aria-label="Précédent">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="carousel-btn next" id="carouselNext" aria-label="Suivant">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+      <div class="carousel-dots" id="carouselDots">
+        <button class="carousel-dot active" data-index="0" aria-label="Photo 1"></button>
+        <button class="carousel-dot" data-index="1" aria-label="Photo 2"></button>
+        <button class="carousel-dot" data-index="2" aria-label="Photo 3"></button>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== STATS BAR ===== -->
   <section class="lp-stats">
     <div class="container lp-stats-grid">
@@ -644,6 +785,39 @@
       this.style.display = 'none';
       document.getElementById('lpSuccess').style.display = 'block';
     });
+
+    // Carousel
+    (function() {
+      const track = document.getElementById('carouselTrack');
+      const dots = document.querySelectorAll('.carousel-dot');
+      const total = 3;
+      let current = 0;
+      let timer;
+
+      function goTo(index) {
+        current = (index + total) % total;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach(function(d, i) {
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      function next() { goTo(current + 1); }
+      function prev() { goTo(current - 1); }
+
+      function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(next, 4000);
+      }
+
+      document.getElementById('carouselNext').addEventListener('click', function() { next(); resetTimer(); });
+      document.getElementById('carouselPrev').addEventListener('click', function() { prev(); resetTimer(); });
+      dots.forEach(function(d) {
+        d.addEventListener('click', function() { goTo(parseInt(this.dataset.index)); resetTimer(); });
+      });
+
+      timer = setInterval(next, 4000);
+    })();
   </script>
 
 </body>
