@@ -49,6 +49,7 @@ backToTop.addEventListener('click', () => {
 // ===== PARTICLES =====
 function createParticles() {
   const container = document.getElementById('particles');
+  if (!container) return;
   for (let i = 0; i < 40; i++) {
     const p = document.createElement('div');
     p.className = 'particle';
